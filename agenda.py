@@ -27,7 +27,13 @@ while True:
         time.sleep(2)
         
     elif escolha == 2:
-        print(agenda)
+        
+        if len(agenda) == 0:
+            print("A lista de contatos esta vazia")
+            continue
+        
+        for contato in agenda:
+            print(f"nome: {contato["nome"]}---- telefone: {contato["telefone"]}")
         time.sleep(5)
 
         
