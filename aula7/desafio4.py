@@ -11,11 +11,9 @@ carteira_clientes = [
         {"nome": "Jose", "cidade": "Porto Alegre"}
         ]
     
-cidade_escolhida = input("digite o nome de uma cidade: ").title()
+cidade_escolhida = input("digite o nome de uma cidade: ")
 
 
 for cliente in carteira_clientes:
-    if cliente["cidade"] == cidade_escolhida:
-        print(cliente["nome"])
-
-            
+    if cliente["cidade"].lower() == cidade_escolhida.lower():
+        print(f"Cliente encontrado: {cliente['nome']}")
