@@ -12,14 +12,26 @@
 import random
 
 while True:
-    print("voce quer Par ou Impar? ")
-    numero = int(input("digite um numero de 0 a 10"))
+    escolha = input("voce quer Par ou Impar? ").lower()
+    try:
+        numero = int(input("digite um numero de 0 a 10: "))
+    except ValueError:
+        print("digite um numero")
+        continue
     numero_sorteado = (random.randint(0, 10))
     total = numero + numero_sorteado
-    
-    if numero_sorteado % 2 == 0:
-        print("par")
+
+    if total % 2 == 0:
+        if escolha == "par":
+            print("O jogador venceu")
+        else:
+            print("O jgoador perdeu")
     else:
-        print("impar")
-    
-    
+        if escolha == "impar":
+            print("venceu")
+        else:
+            print("perdeu")
+
+    jogar = input("Quer jogar de novo? (s/n): ").lower()
+    if jogar == "n":
+        break
